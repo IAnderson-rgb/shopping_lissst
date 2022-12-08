@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-Selectors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Shopping List</h1>
+  <div class="strong">
+    <p>Get it done today</p>
+    <p>No excuses</p>
+    <p>(Be careful. List items have a tendency to move. Try to remove all the items from your shopping list.)</p>
+  </div>
+  <div class="input_btn">
+    <input class="rd_input_box" id="userInput" type="text" placeholder="enter items">
+    <button class="btn" id="enter">Enter</button>
+  </div>  
+  <ul id="list_item">
+    <li>Notebook<button class="delete">Delete Item</button></li>
+    <li>Jello<button class="delete">Delete Item</button></li>
+    <li>Spinach<button class="delete">Delete Item</button></li>
+    <li>Rice<button class="delete">Delete Item</button></li>
+    <li>Birthday Cake<button class="delete">Delete Item</button></li>
+    <li>Candles<button class="delete">Delete Item</button></li>
+  </ul>
+  <section class="modal hidden" id="toggleModal">
+    <div class="flex">
+      <img src="https://thumbs.dreamstime.com/z/i-won-businessman-crossing-finish-line-30595715.jpg" width="50px" height="50px" alt="user" />
+      <button class="btn-close" id="close">⨉</button>
+    </div>
+    <div>
+      <h3>You won!</h3>
+      <p>
+        You have now mastered the shopping list! Happy shopping! :)
+      </p>
+    </div>
+    <!-- <input type="email" id="email" placeholder="brendaneich@js.com" /> -->
+  </section>
+  <div class="overlay hidden" id="toggleOverlay"></div>
+  
+
+
+  <script src="index.js"></script>
+</body>
+</html>
