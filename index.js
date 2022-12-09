@@ -17,6 +17,12 @@ function toggleItem() {
 	this.classList.toggle('done');
 }
 
+function listenForCompletedItem() {
+	for (var i = 0; i < list_items.length; i++) {
+		list_items[i].addEventListener('click', toggleItem);
+	}
+}
+
 function toggleModal() {
 	// This will toggle the modal and overlay.
 	if (show === true) {
@@ -52,13 +58,9 @@ function creatListElement() {
 	delButton = itemsToDel;
 
 	//Listens for the click event on new items.
-	for (var i = 0; i < list_items.length; i++) {
-		list_items[i].addEventListener('click', toggleItem);
-	}
+	listenForCompletedItem();
 
-	for (var i = 0; i < delButton.length; i++) {
-		delButton[i].addEventListener('click', delItem);
-	}
+	listenForDelete();
 }
 
 function checkEpmty() {
@@ -75,6 +77,12 @@ function delItem(evt) {
 	if (delButton.length === 0) {
 		checkEpmty();
 }
+}
+
+function listenForDelete(){
+	for (var i = 0; i < delButton.length; i++) {
+		delButton[i].addEventListener('click', delItem, false);
+	}
 }
 
 function addListAfterClick() {
@@ -94,14 +102,10 @@ function closeModalAndHide() {
 	document.location.reload();
 }
 
-for (var i = 0; i < delButton.length; i++) {
-	delButton[i].addEventListener('click', delItem, false);
-}
+listenForDelete();
 
 //Listens for the click event on any existing items.
-for (var i = 0; i < list_items.length; i++) {
-	list_items[i].addEventListener('click', toggleItem);
-}
+listenForCompletedItem();
 
 button.addEventListener('click', addListAfterClick);
 
